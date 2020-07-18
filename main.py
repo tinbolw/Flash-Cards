@@ -1,25 +1,40 @@
+import os
 
 done = None
 
+
+
+
 questionsCorrect = 0
 questionsAmount = 0
+question1 = ""
+answer1 = ""
+
+def askQuestion2():
+	print("wip")
 
 def askQuestion1():
+	global question1
 	global questionsCorrect
+	global questionsAmount
+	global answer1
 	print(question1)
 	answer = input("What is the answer?\n")
 	answer = str(answer)
 	if answer == answer1:
 		print("Correct!")
 		questionsCorrect += 1
+		questionsCorrect = str(questionsCorrect)
+		questionsAmount = str(questionsAmount)
+		print("Your score is: + " + questionsCorrect + "/" + questionsAmount)
 		askQuestion2()
 	elif answer != answer1:
-		tryagain = input("Incorrect\n Do you want to try again?\n")
+		tryagain = input("Incorrect\nDo you want to try again?\n")
 		tryagain = str(tryagain)
 		if tryagain == "Y" or "y" or "yes" or "Yes":
 			askQuestion1()
 		elif tryagain == "N" or "n" or "no" or "No":
-			askQuestion2
+			askQuestion2()
 
 def askDone():
 	global done
@@ -27,13 +42,17 @@ def askDone():
 	done = str(done)
 
 def getQuestion1():
+	global answer1
 	global done
+	global questionsAmount
+	global question1
 	question1 = input("What is the question?\n")
 	answer1 = input("What is the answer?\n")
 	questionsAmount += 1
 	askDone()
 	if done == "Y" or "y" or "yes" or "Yes":
 		print("Ok")
+		os.system('cls' if os.name == 'nt' else 'clear')
 		askQuestion1()
 	elif done == "N" or "n" or "no" or "No":
 		getQuestion2()
