@@ -1,48 +1,48 @@
 
-questionsCorrect = 0
-questionsAmount = 0
-question1 = ""
-answer1 = ""
-isDone = ""
+continue1 = ""
+
+def getCard2():
+	question2 = input("What is the question?\n")
+	answer2 = input("What is the answer?\n")
+	continue2 = input("Continue? (Y/N)\n")
+
+def askQuestion2():
+	print("WIP")
+
 
 def askQuestion1():
-	global questionsCorrect
-	global question1
-	global answer1
 	print(question1)
-	answer = input("What is the answer?\n")
-	answer = str(answer)
-	if answer == answer1:
-		print("Correct!")
-		questionsCorrect += 1
-		askQuestion2()
-	elif answer != answer1:
-		tryagain = input("Incorrect\n Do you want to try again?\n")
-		tryagain = str(tryagain)
-		if tryagain == "Y" or "y" or "yes" or "Yes":
-			askQuestion1()
-		elif tryagain == "N" or "n" or "no" or "No":
-			askQuestion2
+	evaluate1 = input("What is the answer?\n")
+	if evaluate1 == answer1:
+		print("Correct!\n")
+	elif evaluate1 != answer1:
+		def funcTryAgain1():
+			tryAgain1 = ("Incorrect\nWould you like to try again? (Y/N)\n")
+			if tryAgain1 == str("Y"):
+				askQuestion1()
+			elif tryAgain1 == str("N"):
+				print("Ok, skipping to question 2\n")
+				askQuestion2()
+			else:
+				print("Invalid Selection")
+				funcTryAgain1()
 
 
-def getQuestion1():
-	global questionsAmount
-	global question1
-	global answer1
+def funcContinue1():
+	if continue1 == str("Y"):
+		getCard2()
+	elif continue1 == str == str("N"):
+		askQuestion1()
+	else:
+		print("Invalid Selection")
+		funcContinue1()
+
+
+def getCard1():
+	global continue1
 	question1 = input("What is the question?\n")
 	answer1 = input("What is the answer?\n")
-	questionsAmount += 1
-	isDone = input("Are you done? (Y/N)\n")
-	isDone = str(isDone)
-	def checkDone1():
-		if isDone == str(Y):
-			print("Ok")
-			askQuestion1()
-		elif isDone == str(N):
-			getQuestion2()
-		else:
-			print("Invalid Selection")
-			checkDone1()
-	checkDone1()
+	continue1 = input("Continue? (Y/N)\n")
+	funcContinue1()
 
-getQuestion1()
+getCard1()
