@@ -31,16 +31,8 @@ def askQuestion1():
 		print("Your score is: " + questionsCorrect + "/" + questionsAmount)
 		askQuestion2()
 	elif evaluate1 != answer1:
-		def funcTryAgain1():
-			tryAgain1 = ("Incorrect\nWould you like to try again? (Y/N)\n")
-			if tryAgain1 == "Y" or tryAgain1 == "y" or tryAgain1 == "yes" or tryAgain1 == "Yes":
-				askQuestion1()
-			elif tryAgain1 == "N" or tryAgain1 == "n" or tryAgain1 == "no" or tryAgain1 == "No":
-				print("Ok, skipping to question 2\n")
-				askQuestion2()
-			else:
-				print("Invalid Selection")
-				funcTryAgain1()
+		print("Incorrect!")
+		askQuestion2()
 
 
 def funcContinue1():
