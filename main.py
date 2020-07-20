@@ -57,9 +57,9 @@ def askQuestion1():
 		askQuestion2()
 
 def funcContinue2():
-	if continue2 == "Y" or continue1 == "y" or continue1 == "yes" or continue1 == "Yes":
+	if continue2 == "Y" or continue2 == "y" or continue2 == "yes" or continue2 == "Yes":
 		getCard3()
-	elif continue1 == "N" or continue1 == "n" or continue1 == "no" or continue1 == "No":
+	elif continue2 == "N" or continue2 == "n" or continue2 == "no" or continue2 == "No":
 		os.system('cls' if os.name == 'nt' else 'clear')
 		askQuestion1()
 	else:
